@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: 'Outfit', system-ui, sans-serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --poke-yellow: #FFCB05;
+  --poke-blue: #0075BE;
+  --poke-navy: #1C2E5A;
+  --poke-red: #CC0000;
+  --poke-light: #F5F7FA;
+  --poke-gray: #E8EDF2;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: white;
+  color: var(--poke-navy);
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--font-body), system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+@layer components {
+  .btn-poke {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+    padding: 0.75rem 1.75rem; border-radius: 9999px; font-weight: 900; font-size: 0.875rem;
+    background: var(--poke-blue); color: white;
+    border: 3px solid #000;
+    box-shadow: 4px 4px 0px #000;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-family: var(--font-display);
+    transition: all 0.15s ease-in-out; cursor: pointer;
+  }
+  .btn-poke:hover {
+    background: var(--poke-navy);
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px #000;
+  }
+  .btn-poke:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px #000;
+  }
+  .btn-poke:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: 4px 4px 0px #000; }
+
+  .btn-poke-outline {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+    padding: 0.75rem 1.75rem; border-radius: 9999px; font-weight: 900; font-size: 0.875rem;
+    border: 3px solid #000; color: #000; background: white;
+    box-shadow: 4px 4px 0px #000;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-family: var(--font-display);
+    transition: all 0.15s ease-in-out; cursor: pointer;
+  }
+  .btn-poke-outline:hover { background: var(--poke-blue); color: white; transform: translate(-2px, -2px); box-shadow: 6px 6px 0px #000; }
+  .btn-poke-outline:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0px #000; }
+
+  .btn-poke-yellow {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+    padding: 0.75rem 1.75rem; border-radius: 9999px; font-weight: 900; font-size: 0.875rem;
+    background: var(--poke-yellow); color: var(--poke-navy);
+    border: 3px solid #000;
+    box-shadow: 4px 4px 0px #000;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-family: var(--font-display);
+    transition: all 0.15s ease-in-out; cursor: pointer;
+  }
+  .btn-poke-yellow:hover { filter: brightness(1.05); transform: translate(-2px, -2px); box-shadow: 6px 6px 0px #000; }
+  .btn-poke-yellow:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0px #000; }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+    padding: 0.75rem 1.75rem; border-radius: 9999px; font-weight: 900; font-size: 0.875rem;
+    background: var(--poke-red); color: white;
+    border: 3px solid #000;
+    box-shadow: 4px 4px 0px #000;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-family: var(--font-display);
+    transition: all 0.15s ease-in-out; cursor: pointer;
+  }
+  .btn-primary:hover { background: var(--poke-navy); transform: translate(-2px, -2px); box-shadow: 6px 6px 0px #000; }
+  .btn-primary:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0px #000; }
+  .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: 4px 4px 0px #000; }
+
+  .btn-secondary {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+    padding: 0.75rem 1.75rem; border-radius: 9999px; font-weight: 900; font-size: 0.875rem;
+    border: 3px solid #000; color: var(--poke-blue); background: white;
+    box-shadow: 4px 4px 0px #000;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-family: var(--font-display);
+    transition: all 0.15s ease-in-out; cursor: pointer;
+  }
+  .btn-secondary:hover { background: var(--poke-blue); color: white; transform: translate(-2px, -2px); box-shadow: 6px 6px 0px #000; }
+  .btn-secondary:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0px #000; }
+
+  .section-title {
+    @apply text-4xl sm:text-5xl font-display font-black tracking-wider uppercase text-white;
+    -webkit-text-stroke: 2px #000000;
+    text-shadow: 3px 3px 0px #000000;
+  }
+
+  .section-subtitle {
+    color: var(--poke-yellow);
+    font-family: var(--font-display);
+    @apply text-lg font-black tracking-wide uppercase mt-1;
+    text-shadow: 1px 1px 0px #000;
+  }
+
+  .poke-card {
+    @apply bg-white rounded-3xl transition-all duration-300;
+    border: 3px solid #000;
+    box-shadow: 6px 6px 0px #000;
+  }
+  .poke-card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0px #000;
+  }
+
+  .input-poke {
+    @apply w-full px-4 py-3 rounded-xl transition-all duration-200 font-bold;
+    background: white; border: 3px solid #000; color: var(--poke-navy);
+    box-shadow: 3px 3px 0px #000;
+  }
+  .input-poke:focus {
+    outline: none; border-color: var(--poke-blue);
+    box-shadow: 4px 4px 0px var(--poke-blue);
+  }
+  .input-poke::placeholder { color: color-mix(in srgb, var(--poke-navy) 40%, transparent); }
+  .input-glass { @apply input-poke; }
+
+  .glass { @apply poke-card; }
+  .glass-hover { @apply poke-card; }
+
+  .card-perspective { perspective: 1000px; }
+  .card-3d-inner { transform-style: preserve-3d; transition: transform 0.1s ease-out; }
+
+  .tcg-gloss {
+    background: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, transparent 35%, transparent 65%, rgba(0,0,0,0.08) 100%);
+  }
+  .tcg-gold-frame {
+    background: linear-gradient(145deg, #fde68a 0%, #f59e0b 20%, #fef3c7 45%, #d97706 70%, #fbbf24 100%);
+    box-shadow: 0 0 12px rgba(251,191,36,0.4), inset 0 1px 0 rgba(255,255,255,0.5);
+  }
+  .tcg-silver-frame {
+    background: linear-gradient(145deg, #e8e8ec 0%, #c8c8d0 25%, #f0f0f4 50%, #a8a8b4 75%, #d0d0d8 100%);
+    box-shadow: 0 0 8px rgba(255,255,255,0.15), inset 0 1px 0 rgba(255,255,255,0.4);
+  }
+  .pokeball-stripe {
+    background: repeating-linear-gradient(-45deg, var(--poke-yellow), var(--poke-yellow) 8px, var(--poke-blue) 8px, var(--poke-blue) 16px);
+  }
+}
+
+.holo-overlay {
+  position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  opacity: 0; transition: opacity 0.3s ease;
+  background: linear-gradient(125deg, transparent 0%, rgba(255,0,128,0.15) 15%, rgba(0,255,255,0.15) 30%, rgba(255,255,0,0.15) 45%, rgba(128,0,255,0.15) 60%, rgba(255,128,0,0.15) 75%, transparent 100%);
+  background-size: 300% 300%; mix-blend-mode: color-dodge;
+}
+.group:hover .holo-overlay { opacity: 1; animation: holoShift 3s linear infinite; }
+.holo-overlay-premium { opacity: 0.15; }
+.group:hover .holo-overlay-premium { opacity: 0.85; animation: holoShift 2s linear infinite; }
+.holo-shine {
+  position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.4) 45%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0.4) 55%, transparent 60%);
+  background-size: 200% 200%; opacity: 0; transition: opacity 0.3s;
+}
+.group:hover .holo-shine { opacity: 1; animation: shimmer 2s ease-in-out infinite; }
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f5f7fa; }
+::-webkit-scrollbar-thumb { background: #0075BE44; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #0075BE88; }
+
+.masonry-grid { columns: 1; column-gap: 1.25rem; }
+@media (min-width: 640px) { .masonry-grid { columns: 2; } }
+@media (min-width: 1024px) { .masonry-grid { columns: 3; } }
+@media (min-width: 1280px) { .masonry-grid { columns: 4; } }
+.masonry-item { break-inside: avoid; margin-bottom: 1.25rem; }
+
+@keyframes holoShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes shimmer {
+  0%, 100% { background-position: 200% center; }
+  50% { background-position: -200% center; }
+}
