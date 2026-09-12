@@ -101,8 +101,13 @@ function startDevServers(mongoUri) {
     NEXT_PUBLIC_SOCKET_URL: apiUrl,
   };
 
+  const nextEnv = {
+    ...env,
+    __NEXT_DEVTOOL_SEGMENT_EXPLORER: "",
+  };
+
   const next = spawn("npx", ["next", "dev", "-p", nextPort], {
-    env,
+    env: nextEnv,
     stdio: "inherit",
     shell: true,
     cwd: path.join(__dirname, ".."),
