@@ -69,22 +69,6 @@ export interface TournamentProgress {
     cleared?: boolean;
   }>;
 }
-  currentStage: number;
-  highestStageCleared: number;
-  winsInARow: number;
-  lastPlayedAt?: string | null;
-  claimedStageRewards?: number[];
-  pendingTournamentReward?: { stage: number; cardIds?: string[] } | null;
-  pendingRewardCards?: Card[];
-  stages?: Array<{
-    id: number;
-    name: string;
-    type: string;
-    leader: string;
-    status: "cleared" | "current" | "locked";
-    cleared?: boolean;
-  }>;
-}
 
 export interface TradeParticipant {
   socketId: string;
