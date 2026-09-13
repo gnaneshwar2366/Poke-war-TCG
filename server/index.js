@@ -4,7 +4,7 @@ const { createServer } = require("http");
 const { Server } = require("socket.io");
 require("dotenv").config();
 
-const { connectDB, Card, User } = require("./db");
+const { connectDB, Card, User, mongoose } = require("./db");
 const { setupTradingSocket } = require("./socket/trading");
 const { setupBattleSocket } = require("./socket/battle");
 const { enrichCard } = require("../scripts/card-meta");
