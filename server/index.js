@@ -562,7 +562,11 @@ app.post("/api/users/:username/add-coins", async (req, res) => {
 });
 
 app.get("/api/health", (_req, res) => {
-  res.json({ status: "ok" });
+  const databaseConnected = mongoose.connection.readyState === 1;
+  res.status(databaseConnected ? 200 : 503).json({
+    status: databaseConnected ? "ok" : "degraded",
+    database: databaseConnected ? "connected" : "disconnected",
+  });
 });
 
 // ─── Socket.io Trading ───────────────────────────────────────
